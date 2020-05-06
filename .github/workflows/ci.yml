@@ -148,3 +148,11 @@ jobs:
           body_path: CHANGELOG.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  roave_bc_check:
+    name: Roave BC Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Roave BC Check
+        uses: docker://nyholm/roave-bc-check-ga
